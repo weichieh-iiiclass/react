@@ -13,10 +13,13 @@ function App() {
       </h1> */}
 
       <div className="btn-group" role="group" aria-label="Basic example">
-        <button type="button" className="btn btn-primary"
-        onClick={() => {
-          setTotal(total + 1)
-        }}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => {
+            setTotal(total + 1)
+          }}
+        >
           +
         </button>
 
@@ -24,10 +27,13 @@ function App() {
           {total}
         </button>
 
-        <button type="button" className="btn btn-primary"
-        onClick={() => {
-          setTotal(total - 1)
-        }}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => {
+            setTotal(total - 1)
+          }}
+        >
           -
         </button>
       </div>
