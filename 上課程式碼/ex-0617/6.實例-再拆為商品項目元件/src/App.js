@@ -15,26 +15,28 @@ function App() {
     tshirtThree: 450,
   }
 
+  // 每個產品的圖片
   const pictureList = {
-    tshirtOne: "https://i.imgur.com/1GrakTl.jpg",
-    tshirtTwo: "https://i.imgur.com/ba3tvGm.jpg",
-    tshirtThree: "https://i.imgur.com/pHQ3xT3.jpg",
+    tshirtOne: 'https://i.imgur.com/1GrakTl.jpg"',
+    tshirtTwo: 'https://i.imgur.com/ba3tvGm.jpg',
+    tshirtThree: 'https://i.imgur.com/pHQ3xT3.jpg',
   }
 
+  // 每個產品的名稱
   const nameList = {
-    tshirtOne: "咖啡色 T-shirt",
-    tshirtTwo: "白色 T-shirt",
-    tshirtThree: "黑色 T-shirt",
+    tshirtOne: '咖啡色 T-shirt',
+    tshirtTwo: '白色 T-shirt',
+    tshirtThree: '黑色 T-shirt',
   }
 
   // 計算總價
-  const total = () => 
+  const total = () =>
     Number(
       priceList['tshirtOne'] * tshirtOne +
-      priceList['tshirtTwo'] * tshirtTwo +
-      priceList['tshirtThree'] * tshirtThree
+        priceList['tshirtTwo'] * tshirtTwo +
+        priceList['tshirtThree'] * tshirtThree
     ).toLocaleString()
-    
+
   // 計算所有商品數量
   const productCount = () =>
     tshirtOne + tshirtTwo + tshirtThree
@@ -43,20 +45,20 @@ function App() {
     <div className="card">
       <div className="row">
         <OrderList
-        tshirtOne={tshirtOne}
-        tshirtTwo={tshirtTwo}
-        tshirtThree={tshirtThree}
-        setTshirtOne={setTshirtOne}
-        setTshirtTwo={setTshirtTwo}
-        setTshirtThree={setTshirtThree}
-        priceList={priceList}
-        pictureList={pictureList}
-        nameList={nameList}
+          tshirtOne={tshirtOne}
+          setTshirtOne={setTshirtOne}
+          tshirtTwo={tshirtTwo}
+          setTshirtTwo={setTshirtTwo}
+          tshirtThree={tshirtThree}
+          setTshirtThree={setTshirtThree}
+          priceList={priceList}
+          pictureList={pictureList}
+          nameList={nameList}
         />
         <Summary
-        productCount={productCount}
-        total={total}
-         />
+          productCount={productCount}
+          total={total}
+        />
       </div>
     </div>
   )
