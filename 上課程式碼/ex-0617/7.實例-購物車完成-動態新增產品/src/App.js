@@ -4,6 +4,7 @@ import OrderList from './components/OrderList'
 import Summary from './components/Summary'
 
 // 產品訂購的項目
+// 陣列裡放物件(商品資訊)
 const products = [
   {
     name: '咖啡色 T-shirt',

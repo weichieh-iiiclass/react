@@ -1,8 +1,7 @@
 import React from 'react'
 
 function ProductItem(props) {
-  const { category, name, image, price, count, setCount } =
-    props
+  const { category, name, image, price, count, setCount } = props
 
   return (
     <>
@@ -27,10 +26,7 @@ function ProductItem(props) {
             <a href="#/" className="border">
               {count}
             </a>
-            <a
-              href="#/"
-              onClick={() => setCount(count + 1)}
-            >
+            <a href="#/" onClick={() => setCount(count + 1)}>
               +
             </a>
           </div>
