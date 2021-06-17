@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './App.css'
-import Summary from './components/Summary/'
 import OrderList from './components/OrderList/'
+import Summary from './components/Summary/'
+//路徑後面省略index 
 
 // 產品訂購的項目
 const products = [
@@ -44,7 +45,7 @@ function App() {
     Array(products.length).fill(1)
   )
 
- // 計算總價用
+  // 計算總價用
   const total = () => {
     let sum = 0
     for (let i = 0; i < products.length; i++) {
@@ -53,6 +54,7 @@ function App() {
 
     return sum.toLocaleString()
   }
+
   // 計算總共買了多少產品
   const productCount = () => {
     let totalCount = 0

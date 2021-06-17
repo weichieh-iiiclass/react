@@ -1,41 +1,35 @@
 import React from 'react'
 
 function ProductItem(props) {
-  const { tshirt, setTshirt, price, picture, name } = props
+  const { category, name, image, price, count, setCount } =
+    props
+
   return (
     <>
       <div className="row border-top border-bottom">
         <div className="row main align-items-center">
           <div className="col-2">
-            <img
-              alt=""
-              className="img-fluid"
-              src={picture}
-            />
+            <img alt="" className="img-fluid" src={image} />
           </div>
           <div className="col">
-            <div className="row text-muted">Shirt</div>
+            <div className="row text-muted">{category}</div>
             <div className="row">{name}</div>
           </div>
           <div className="col">
             <a
               href="#/"
               onClick={() => {
-                const newTshirt = tshirt - 1 < 1 ? 1 : tshirt - 1
-
-                setTshirt(newTshirt)
+                setCount(count - 1)
               }}
             >
               -
             </a>
             <a href="#/" className="border">
-              {tshirt}
+              {count}
             </a>
             <a
               href="#/"
-              onClick={() => {
-                setTshirt(tshirt + 1)
-              }}
+              onClick={() => setCount(count + 1)}
             >
               +
             </a>
@@ -50,5 +44,3 @@ function ProductItem(props) {
 }
 
 export default ProductItem
-
-
