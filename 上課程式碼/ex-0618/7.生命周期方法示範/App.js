@@ -1,5 +1,5 @@
 import React from 'react'
-import Child from './components/Child'
+import Child from './componnets/Child'
 
 class App extends React.Component {
   constructor() {
