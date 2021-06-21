@@ -1,32 +1,34 @@
 import React from 'react'
-import Child from './components/Child'
+import ChildCC from './ChildCC'
 
-class App extends React.Component {
+class ParentCC extends React.Component {
   constructor() {
     super()
     this.state = {
       isChildLive: true,
     }
-    console.log('App constructor')
+    console.log('ParentCC constructor')
   }
 
   componentDidMount() {
-    console.log('App componentDidMount')
+    console.log('ParentCC componentDidMount')
   }
 
   componentDidUpdate() {
-    console.log('App componentDidUpdate')
+    console.log('ParentCC componentDidUpdate')
   }
 
   componentWillUnmount() {
-    console.log('App componentWillUnmount')
+    console.log('ParentCC componentWillUnmount')
   }
 
   render() {
-    console.log('App render')
+    console.log('ParentCC render')
 
     return (
       <>
+        <h1>類別型元件</h1>
+        <br />
         <button
           onClick={() => {
             this.setState({ isChildLive: true })
@@ -42,10 +44,10 @@ class App extends React.Component {
           Die
         </button>
         <hr />
-        {this.state.isChildLive ? <Child /> : ''}
+        {this.state.isChildLive ? <ChildCC /> : ''}
       </>
     )
   }
 }
 
-export default App
+export default ParentCC

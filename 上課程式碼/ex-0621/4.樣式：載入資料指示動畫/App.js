@@ -32,7 +32,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   // componentDidMount
-  useEffect(()=>{
+  useEffect(() => {
     //1.開啟指示器
     setIsLoading(true)
 
@@ -41,39 +41,33 @@ function App() {
     setData(products)
 
     //3. 關起指示器
-    setTimeout(()=>{
+    setTimeout(() => {
       setIsLoading(false)
-    },2000)
+    }, 2000)
+  }, [])
 
-  },[])
-
-  const spinner =(
+  const spinner = (
     <div className="spinner-border text-danger" role="status">
       <span class="sr-only">Loading...</span>
     </div>
   )
-  const display = (
-    products.map((product, index)=>{
-      return(
+  const display = products.map((product, index) => {
+    return (
       <div key={index}>
         <h3>{product.name}</h3>
       </div>
+    )
+  })
 
-      )
-    })
-  )
-
-  return(
+  return (
     <>
       <div className="container mx-auto mt-5">
         <div className="col-6 mx-auto">
-        {/* isLoading是true的話就顯示spinner，false顯示資料display */}
+          {/* isLoading是true的話就顯示spinner，false顯示資料display */}
           {isLoading ? spinner : display}
         </div>
-
       </div>
     </>
-
   )
 }
 
