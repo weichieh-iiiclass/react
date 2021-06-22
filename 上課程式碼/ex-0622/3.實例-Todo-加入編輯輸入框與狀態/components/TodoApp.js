@@ -22,86 +22,101 @@ function TodoApp() {
     },
   ])
 
-
   // 【 編輯功能 】
-  // 先由目前的todos拷貝出一個新的陣列
-  // 利用id值找到對應的todo項目的索引值，用findIndex的作法
-  // 如果有找到就切換edited的true/false
-  // 設定回狀態值
   const handleEdited = (id) => {
-
+    // 先由目前的todos拷貝出一個陣列
     const newTodos = [...todos]
+
+    // 利用id值找到對應的todo項目的索引值
+    // 用findIndex的作法
     const index = newTodos.findIndex(
       (item) => item.id === id
     )
 
+    // 如果有找到就切換completed的true/false
     if (index !== -1) {
       newTodos[index].edited = !newTodos[index].edited
+      // 設定回狀態值
       setTodos(newTodos)
     }
+
+    // // for迴圈的作法
+    // for (let i = 0; i < newTodos.length; i++) {
+    //   if (newTodos[i].id === id) {
+    //     newTodos[i].completed = !newTodos[i].completed
+    //     break
+    //   }
+    // }
+
+    // setTodos(newTodos)
   }
 
-   // 【 儲存功能 】
-  // 先由目前的todos拷貝出一個新的陣列
-  // 利用id值找到對應的todo項目的索引值，用findIndex的作法
-  // 如果有找到的話，把該項目的文字屬性改成新的
-  // 設定回原本的todos
-  // 儲存完之後，切換到原本的清單頁面狀態
-  const handleEditedSave = (id, text) => {
-    const newTodos = [...todos]
-    const index = newTodos.findIndex(
-      (item) => item.id === id
-    )
-
-    if (index !== -1) {
-      newTodos[index].text = text
-      setTodos(newTodos)
-      handleEdited(id)
-    }
-  }
-
-   // 【 刪除功能 】
-   // 先由目前的todos過濾掉"不要"有這個id的一個新陣列
-   // 設定回狀態值
+  // 【 刪除功能 】
   const handleDelete = (id) => {
+    // 先由目前的todos過濾掉"不要"有這個id的一個新陣列
     const newTodos = todos.filter((item) => item.id !== id)
+    // 設定回狀態值
     setTodos(newTodos)
+
+    // // for
+    // const newTodos = []
+
+    // for (let i = 0; i < todos.length; i++) {
+    //   if (todos[i].id === id) continue
+
+    //   newTodos.push(todos[i])
+    // }
+    // setTodos(newTodos)
   }
 
-  //  【 勾選完成功能 】
-  // 先由目前的todos拷貝出一個陣列
-  // 利用id值找到對應的todo項目的索引值
-  // 用findIndex的作法
-  // 如果有找到就切換completed的true/false
-  // 設定回狀態值
+  //  【 勾選功能 】
   const handleCompleted = (id) => {
+    // 先由目前的todos拷貝出一個陣列
     const newTodos = [...todos]
 
+    // 利用id值找到對應的todo項目的索引值
+    // 用findIndex的作法
     const index = newTodos.findIndex(
       (item) => item.id === id
     )
 
+    // 如果有找到就切換completed的true/false
     if (index !== -1) {
       newTodos[index].completed = !newTodos[index].completed
+      // 設定回狀態值
       setTodos(newTodos)
     }
+
+    // // for迴圈的作法
+    // for (let i = 0; i < newTodos.length; i++) {
+    //   if (newTodos[i].id === id) {
+    //     newTodos[i].completed = !newTodos[i].completed
+    //     break
+    //   }
+    // }
+
+    // setTodos(newTodos)
   }
 
   // 【 input框新增功能 】
-  // 建立一個todo項目的物件值，用時間物件轉微秒整數當id值
-  // 文字輸入框的值加到陣列todos，相當於unshift，在陣列前加入新的成員
-  // 設定陣列狀態值
-  // 清空文字輸入框
   const handleAddNew = (e) => {
     if (e.key === 'Enter') {
+      // 建立一個todo項目的物件值
+      // 用時間物件轉微秒整數當id值
       const newTodoItem = {
         id: +new Date(),
         text: e.target.value,
         completed: false,
       }
 
+      // 文字輸入框的值加到陣列todos
+      // 相當於unshift，在陣列前加入新的成員
       const newTodos = [newTodoItem, ...todos]
+
+      // 設定陣列狀態值
       setTodos(newTodos)
+
+      // 清空文字輸入框
       setTodoInput('')
     }
   }
@@ -119,7 +134,6 @@ function TodoApp() {
         handleCompleted={handleCompleted}
         handleDelete={handleDelete}
         handleEdited={handleEdited}
-        handleEditedSave={handleEditedSave}
       />
     </>
   )
