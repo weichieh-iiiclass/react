@@ -30,6 +30,7 @@ function TodoItemEditForm(props) {
         <button
           className="btn btn-danger"
           onClick={() => {
+            // 不做任何事情，只是切換todoItem.edited的值，退出編輯模式
             handleEdited(todoItem.id)
           }}
         >
