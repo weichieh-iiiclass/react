@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import FilterBar from './components/FilterBar'
 import ProductList from './components/ProductList'
 import SearchBar from './components/SearchBar'
 import SortBar from './components/SortBar'
-
 
 import { data } from './data/'
 
@@ -22,7 +21,6 @@ import { data } from './data/'
 */
 
 function App() {
-
   // 產品用狀態
   // 1.從伺服器來的原始資料products
   // 2.從原始資料經過各種處理(排序、搜尋、過濾)後，用來顯示的資料displayProducts
@@ -47,7 +45,7 @@ function App() {
             <div className="grid search">
               <div className="grid-body">
                 <div className="row">
-                 <FilterBar/>
+                  <FilterBar />
                   {/* BEGIN RESULT */}
                   <div className="col-md-9">
                     <h2>
@@ -55,10 +53,8 @@ function App() {
                     </h2>
                     <hr />
                     <SearchBar />
-                    <SortBar/>
-                    <ProductList
-                    products={products}
-                    />
+                    <SortBar />
+                    <ProductList products={products} />
                     {/* BEGIN PAGINATION */}
                     <ul className="pagination">
                       <li className="disabled">

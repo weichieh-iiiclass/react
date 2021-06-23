@@ -33,6 +33,7 @@ function TodoApp() {
         id: +new Date(),
         text: e.target.value,
         completed: false,
+        edited: false
       }
 
       const newTodos = [newTodoItem, ...todos]

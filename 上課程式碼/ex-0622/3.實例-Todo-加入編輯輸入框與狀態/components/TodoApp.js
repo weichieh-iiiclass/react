@@ -107,6 +107,7 @@ function TodoApp() {
         id: +new Date(),
         text: e.target.value,
         completed: false,
+        edited: false
       }
 
       // 文字輸入框的值加到陣列todos
