@@ -1,5 +1,6 @@
-// 其它自訂樣式
 @import './styles/custom.scss';
-
-// 全站都會使用的共同樣式
-@import './styles/global.scss'
+@import './styles/global.scss';
+@import './styles/function';
+@import './styles/variables';
+@import './styles/checkbox';
+@import './styles/radio';
