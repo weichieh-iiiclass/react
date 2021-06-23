@@ -1,1 +1,17 @@
-// 客製化bs4
+// 客製化bootstrap4樣式
+
+$primary:       #FDD2BB;
+$secondary:     #F7F7EE;
+$success:       #c3fda1;
+$info:          #a1dbfd;
+$warning:       #ebdc98;
+$danger:        #E64B4B;
+
+
+
+
+
+// 導入bootstrap所有的樣式與預設變數
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
