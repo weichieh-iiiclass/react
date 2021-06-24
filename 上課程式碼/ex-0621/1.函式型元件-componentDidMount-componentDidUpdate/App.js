@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 /*
   callback函式,依賴性陣列
-  useEffect(()=>{},[])
-  useEffect(()=>{componentDidMount},[])
-  useEffect(()=>{componentDidUpdate},[total])
-  componentDidMount：用didmount時有空陣列沒關係，移除的話會一直執行
-  componentDidUpdate：要跟勾子說要跟著哪個東西的狀態走，所以依賴性陣列就是[total]
+  【架構】:                 useEffect(()=>{},[])
+  【DidMount】:             useEffect(()=>{ 掛載 },[])
+  【DidMount + DidUpdate】: useEffect(()=>{ 掛載+已更新 },[total])
+  【DidUpdate修正寫法】:    useEffect(()=>{ if (!start){return} 已更新 },[total, start])
+  【WillUnmount】:          useEffect(()=>{ return()=>{ 將卸載 } },[total])
+  DidMount：用didmount時有空陣列沒關係，移除的話會一直執行
+  DidUpdate：要跟勾子說要跟著哪個東西的狀態走，所以依賴性陣列就是[total]
 */
 
 
